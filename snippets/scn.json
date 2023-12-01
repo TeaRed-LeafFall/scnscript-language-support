@@ -1,0 +1,45 @@
+{
+  "Initialize-Character": {
+    "prefix": "initchar",
+    "body": [
+      "*init",
+      "; 初始化场景中需要的角色对象",
+      "@action getname=\"公共行为(旁白)\" displayname=false",
+      "@me getname=\"我\" displayname=false",
+      "@clr"
+    ],
+    "description": "Initialize Character"
+  }, 
+  "Create-sence": {
+    "prefix": "sence",
+    "body": [
+      "[sence setname *${1:name}=\"Description\"]",
+      "*${1:name} | Start",
+      "*${1:name} | End"
+    ],
+    "description": "Create sence"
+  },
+  "Sence-Start": {
+    "prefix": "*s",
+    "body": [
+      "*${1:name} | Start"
+    ],
+    "description": "Sence Start"
+  },
+  "Sence-End": {
+    "prefix": "*e",
+    "body": [
+      "*${1:name} | End"
+    ],
+    "description": "Sence End"
+  },
+  "If-part": {
+    "prefix": "@if",
+    "body": [
+      "@if (${1:rule})",
+      "@elseif",
+      "@endif"
+    ],
+    "description": "If part"
+  }
+}

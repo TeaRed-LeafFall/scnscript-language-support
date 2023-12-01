@@ -1,0 +1,52 @@
+{
+  "name": "scnscript-language-support",
+  "displayName": "Scn Script",
+  "description": "scnscript language support",
+  "publisher": "TeaRed-LeafFall",
+  "repository": "https://github.com/TeaRed-LeafFall/scnscript-language-support",
+  "icon": "icon.ico",
+  "version": "0.23.12",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "scn",
+        "aliases": [
+          "ScnScript",
+          "scn"
+        ],
+        "extensions": [
+          ".scn",
+          ".scnx"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "scn.png",
+          "dark": "scn.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "scn",
+        "scopeName": "source.scn",
+        "path": "./syntaxes/scn.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "scn",
+        "path": "snippets/scn.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.84.2"
+  }
+}
