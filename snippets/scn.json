@@ -13,7 +13,7 @@
   "Create-sence": {
     "prefix": "sence",
     "body": [
-      "[sence setname *${1:name}=\"Description\"]",
+      "[sencename *${1:name}=\"Description\"]",
       "*${1:name} | Start",
       "*${1:name} | End"
     ],

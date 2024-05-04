@@ -17,9 +17,6 @@
 			"include": "#obj"
 		},
 		{
-			"include": "#sharp"
-		},
-		{
 			"include": "#defstring"
 		}
 	],
@@ -51,9 +48,12 @@
 		"commands": {
 			"patterns": [
 				{
-					"match": "\\[(\\w+)(?:\\s+(\\w+=\"[^\"]*\"))*\\]",
+					"match": "\\[(\\w+)(?:\\s+\\w+)*(?:\\s+(\\w+=\"[^\"]*\"))*\\]",
 					
 					"captures": {
+						"0":{
+							"name": "entity.name.command.scn"
+						},
 						"1": {
 							"name": "entity.name.command.scn"
 						},
@@ -71,7 +71,7 @@
 		"node": {
 			"patterns": [
                 {
-                    "match": "(^|\\s)(\\*)([\\w\\-_]+)",
+                    "match": "^(\\s*)\\*[\\w\\-_]+(\\s+\\|\\s+(Start|End)|$)",
                     "captures": {
                         "0": {
                             "name": "storage.type.label.scn"
@@ -103,23 +103,6 @@
 						{ "include": "#tag" }
 					],
 
-					"name": "tag.scn"
-				}
-			]
-		},
-		"sharp": {
-			"patterns": [
-				{
-					"begin": "^[ \t]{0,}+#([a-zA-Z0-9_]+)",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.section.tag.scn"
-						}
-					},
-					"end": "(\\n)",
-					"patterns": [
-						{ "include": "#tag" }
-					],
 					"name": "tag.scn"
 				}
 			]
@@ -161,16 +144,10 @@
 		"defstring":{
 			"patterns": [
 				{
-					"match": "^\\s*([*])([\\w\\-_]+)\\s*|\\s*([\\w\\-_ ]+?)",
+					"match": "^\\s*[\\w][^\\[]*|\\s*[\\w]+?",
 					"captures": {
-						"3": {
+						"0": {
 							"name": "punctuation.section.tag.scn"
-						},
-						"1": {
-							"name": "storage.type.label.scn"
-						},
-						"2": {
-							"name": "storage.type.label.scn"
 						}
 					},
 					"name": "label.scn"

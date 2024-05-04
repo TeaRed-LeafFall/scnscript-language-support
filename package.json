@@ -5,7 +5,7 @@
   "publisher": "TeaRed-LeafFall",
   "repository": "https://github.com/TeaRed-LeafFall/scnscript-language-support",
   "icon": "icon.ico",
-  "version": "0.23.12",
+  "version": "1.24.5",
   "engines": {
     "vscode": "^1.84.0"
   },
